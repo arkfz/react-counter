@@ -1,0 +1,18 @@
+button {
+  margin: 20px 5px 0px;
+  padding: 10px;
+  background-color: rgb(97, 218, 251);
+  color: #fff;
+  border: 1px solid rgb(97, 218, 251);
+}
+
+button:hover {
+  color: rgb(97, 218, 251);
+  background-color: #fff;
+  border: 1px solid rgb(97, 218, 251);
+  cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}

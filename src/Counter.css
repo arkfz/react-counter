@@ -1,0 +1,15 @@
+.counter {
+  color: rgb(40, 44, 52); 
+  border: 1px solid rgb(40, 44, 52);
+  padding: 30px;
+  width: 40vh;
+  left: 0;
+  right: 0;
+  margin: 30px auto;
+}
+
+.counter span.value {
+  margin: 0 10px;
+  color: rgb(97, 218, 251);
+  font-weight: bold;
+}
