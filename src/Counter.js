@@ -7,7 +7,8 @@ class Counter extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            counterValue: this.props.initValue,
+            // counterValue: this.props.initValue,
+            counterValue: 50,
         }
     }
 

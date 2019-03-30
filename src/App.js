@@ -10,7 +10,8 @@ class App extends Component {
           <h1>Aplikacja Licznika w ReactJS</h1>
           <h2>Zadanie Domowe</h2>
         </header>
-        <Counter initValue='23'/>
+        {/* <Counter initValue='23'/> */}
+        <Counter />
       </div>
     );
   }
