@@ -3,17 +3,16 @@ import './Buttons.css';
 
 class Buttons extends Component {
 
-    resetOrReinitCounter = (flag) => {
-        this.props.resetCounterValue(flag);
-
+    resetOrReinitCounter = (reset) => {
+        this.props.resetCounterValue(reset);
     }
 
     render() {
         return (
-            <div className='buttons-panel'>
-                <button onClick={this.props.changeCounterValue}>Add 1</button>
-                <button onClick={() => { this.resetOrReinitCounter(1) }}>Re Init</button>
-                <button onClick={() => { this.resetOrReinitCounter(0) }}>Reset</button>
+            <div className="buttons-panel">
+                <button onClick={this.props.changeCounterValue}>Add {this.props.stepValue}</button>
+                <button onClick={() => this.resetOrReinitCounter(false)}>ReInit</button>
+                <button onClick={() => this.resetOrReinitCounter(true)}>Reset</button>
             </div>
         )
     }

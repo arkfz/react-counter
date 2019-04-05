@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
-import './Counter.css'
-import Buttons from './Buttons'
+import './Counter.css';
+import Buttons from './Buttons';
+import Step from './Step';
 
 class Counter extends Component {
-    
+
     constructor(props) {
         super(props);
+
+        let initValue = 0;
+
+        if (!isNaN(this.props.initValue)) {
+            initValue = parseInt(this.props.initValue);
+        }
+
         this.state = {
-            // counterValue: this.props.initValue,
-            counterValue: 50,
+            counterValue: initValue,
+            stepValue: 1,
         }
     }
 
@@ -16,24 +24,30 @@ class Counter extends Component {
         this.setState((prevValue) => {
             return (
                 {
-                    counterValue: parseInt(prevValue.counterValue) + 1,
+                    counterValue: prevValue.counterValue + parseInt(this.state.stepValue),
                 }
             )
         })
     }
 
-    resetCounter = (flag) => {
+    resetCounter = (resetCounter) => {
+        let initValue = 0;
 
-        if (flag == 0) {
-            this.setState({
-                counterValue: 0,
-            })
+        if (!resetCounter) {
+            if (!isNaN(this.props.initValue)) {
+                initValue = parseInt(this.props.initValue);
+            }
         }
-        else if (flag === 1) {
-            this.setState({
-                counterValue: this.props.initValue,
-            })
-        }
+
+        this.setState({
+            counterValue: initValue,
+        })
+    }
+
+    updateStep = (step) => {
+        this.setState({
+            stepValue: step.value,
+        })
     }
 
     render() {
@@ -42,9 +56,12 @@ class Counter extends Component {
                 Licznik:<span className='value'>{this.state.counterValue}</span>
                 <Buttons
                     changeCounterValue={this.changeValue}
+                    stepValue={this.state.stepValue}
                     resetCounterValue={this.resetCounter}
                 />
-
+                <Step
+                    updateStep={this.updateStep}
+                />
             </div>
         )
     }

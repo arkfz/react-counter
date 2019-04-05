@@ -1,0 +1,17 @@
+div {
+  margin: 30px;
+}
+
+input {
+  padding: 2px;
+  width: 75px;
+  text-align: right;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input:focus {
+  outline: none;
+}
